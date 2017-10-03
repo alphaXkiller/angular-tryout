@@ -3,11 +3,19 @@
   <h1>
     Welcome to {{title}}!
   </h1>
-  <img width="300" src="../assets/icon.png" alt=''>
 </div>
+<form [formGroup]='toDoForm' (ngSubmit)='onSubmit(toDoForm.value)' novalidate>
+  <div>
+    <label>Item</label>
+    <input type='text' formControlName='name'/>
+    <label>Description</label>
+    <input type='text' formControlName='description'/>
+    <button type='submit'>Add</button>
+  </div>
+</form>
 <ul>
-  <li><p>{{todo_1}}</p></li>
-  <li><p>{{todo_2}}</p></li>
-  <li><p>{{todo_3}}</p></li>
+  <li *ngFor='let item of items' [value]='item'>
+    name: {{item.name}}
+    description: {{item.description}}
+  </li>
 </ul>
-
