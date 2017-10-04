@@ -8,6 +8,8 @@ import { ItemDetailComponent } from './item.component'
 import { ItemsComponent }      from './items.component'
 import { TodoService }         from './app.service'
 
+import { AppRoutingModule } from './app-routing.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,16 +19,7 @@ import { TodoService }         from './app.service'
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: ItemsComponent
-      },
-      {
-        path: 'todo/:id',
-        component: ItemDetailComponent
-      }
-    ]),
+    AppRoutingModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]
