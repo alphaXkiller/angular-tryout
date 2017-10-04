@@ -1,0 +1,11 @@
+<div class='container'>
+  <div class='list-group'>
+    <a
+      class='list-group-item list-group-item-action'
+      *ngFor='let item of todo_items'
+    >
+      <p>Name: {{item.name}}</p>
+      <p>Description: {{item.description}}</p>
+    </a>
+  </div>
+</div>
