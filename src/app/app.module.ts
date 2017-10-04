@@ -4,16 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule }        from '@angular/router'
 
 import { AppComponent }        from './app.component';
-import { TodoComponent }       from './todo.component'
-import { CompletedComponent }  from './completed.component'
 import { ItemDetailComponent } from './item.component'
+import { ItemsComponent }      from './items.component'
 import { TodoService }         from './app.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent,
-    CompletedComponent,
+    ItemsComponent,
     ItemDetailComponent
   ],
   imports: [
@@ -22,15 +20,7 @@ import { TodoService }         from './app.service'
     RouterModule.forRoot([
       {
         path: '',
-        component: TodoComponent
-      },
-      {
-        path: 'completed',
-        component: CompletedComponent
-      },
-      {
-        path: 'completed/:id',
-        component: ItemDetailComponent
+        component: ItemsComponent
       },
       {
         path: 'todo/:id',

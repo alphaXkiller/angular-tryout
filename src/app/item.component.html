@@ -1,5 +1,9 @@
 <div class='container'>
-  <div>ID: {{item.id}}</div>
-  <div>Name: {{item.name}}</div>
-  <div>Description: {{item.description}}</div>
+  <button class='btn btn-outline-primary' routerLink='/'>Go Home</button>
+  <div *ngIf='item; else loadingItemDetails'>
+    <div>ID: {{item.id}}</div>
+    <div>Name: {{item.name}}</div>
+    <div>Description: {{item.description}}</div>
+  </div>
+  <ng-template #loadingItemDetails>Loading . . .</ng-template>
 </div>

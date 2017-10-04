@@ -15,4 +15,10 @@ export class TodoService {
   getTodoItems(): Bluebird<Item[]> {
     return Bluebird.resolve(R.filter(R.propEq('completed', false))(Items))
   }
+
+  getById(id: number): Bluebird<Item> {
+    return Bluebird.resolve(
+      Items.find(item => item.id === id)
+    ).tap(console.log)
+  }
 }
